@@ -1,0 +1,4 @@
+int elem;	//element
+int priority;	//priority element
+int size;	//size of the queue
+int cur;	//the current size of the queue
