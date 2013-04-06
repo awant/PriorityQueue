@@ -71,11 +71,11 @@ int QueuePriority::Del()
 
 std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP)
 {
-	std::cout<<"This is dump of QueuePriority:\n";
+	cout_<<"This is dump of QueuePriority:\n";
 	for (int i = 0; i < QP.QueueLength; i++)
 	{
-		std::cout<<"value = "<<QP.Wait[i]<<" priority = "<<QP.Pri[i]<<"\n";
+		cout_<<"value = "<<QP.Wait[i]<<" priority = "<<QP.Pri[i]<<"\n";
 	}
-	std::cout<<"\n";
+	cout_<<"\n";
 	return cout_;
 }
