@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <conio.h>
-#include "First2.h"
+#include "PriorQueue.h"
 
 int main()
 {

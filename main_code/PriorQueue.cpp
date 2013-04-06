@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
-#include "First2.h"
+#include "PriorQueue.h"
 
 QueuePriority::~QueuePriority()
 {
@@ -43,11 +43,11 @@ void QueuePriority::Add(int c, int p)
 	QueueLength++;
 }
 
-int QueuePriority::Del()
+int QueuePriority::Extract()
 {
-	if (!IsEmpty())
+	if (!IsEmpty())								//если очередь пуста, то извлекать нечего, возвращаем -1
 	{
-		int max_pri = Pri[0];
+		int max_pri = Pri[0];					//предполагаем, что элемент с наиб. приоритетом первый
 		int pos_max_pri = 0;
 		for (int i = 1; i < QueueLength; i++)
 		{
@@ -57,7 +57,7 @@ int QueuePriority::Del()
 				pos_max_pri = i;
 			}
 		}
-		int ret_val = Wait[pos_max_pri];
+		int ret_val = Wait[pos_max_pri];		//защищаем элемент с наиб. приоритетом от удаления при сдвиге очереди
 		for (int i = pos_max_pri; i < QueueLength - 1; i++)
 		{
 			Wait[i] = Wait[i + 1];
@@ -71,7 +71,7 @@ int QueuePriority::Del()
 
 std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP)
 {
-	cout_<<"This is dump of QueuePriority:\n";
+	cout_<<"  QueuePriority:\n";
 	for (int i = 0; i < QP.QueueLength; i++)
 	{
 		cout_<<"value = "<<QP.Wait[i]<<" priority = "<<QP.Pri[i]<<"\n";
