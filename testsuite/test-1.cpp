@@ -14,7 +14,7 @@ int main()
 	QP.Add(66, 7);
 	QP.Add(22, 8);
 	std::cout<<QP;
-	QP.Del();
+	QP.Extract();
 	std::cout<<QP;
 	_getch();
 	return (0);
