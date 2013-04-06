@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
+#ifndef PRIORQUEUE_H
+#define PRIORQUEUE_H
 
  class QueuePriority
  {
@@ -17,3 +19,5 @@
    int Getlength() const;	//возвращает длину очереди
    friend std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP);	//перегрузка оператора "<<" для вывода на экран очереди с приоритетом
  };
+
+#endif PRIORQUEUE_H
