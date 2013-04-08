@@ -20,7 +20,7 @@ public:
 	QueuePriority();
 	~QueuePriority();
 
-	//add element "ñ" with priority "p"
+	//add element "c" with priority "p"
 	void Add(int c, int p);
 
 	//extract the element with the highest priority
