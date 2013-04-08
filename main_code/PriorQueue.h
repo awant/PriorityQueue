@@ -1,7 +1,7 @@
-#include <stdlib.h>
-#include <iostream>
 #ifndef PRIORQUEUE_H
 #define PRIORQUEUE_H
+#include <stdlib.h>
+#include <iostream>
 
 class QueuePriority
 {
@@ -36,7 +36,7 @@ public:
 	int Getlength() const;
 
 	//overload operator "<<" to display the priority queue
-	friend 
+	friend
 	std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP);
  };
 #endif	//PriorQueue_H
