@@ -1,7 +1,8 @@
-#include <stdlib.h>
-#include <iostream>
 #ifndef PRIORQUEUE_H
 #define PRIORQUEUE_H
+#include <stdlib.h>
+#include <iostream>
+
 
  class QueuePriority
  {
