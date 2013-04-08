@@ -3,21 +3,40 @@
 #ifndef PRIORQUEUE_H
 #define PRIORQUEUE_H
 
- class QueuePriority
- {
- private:
-   int* Wait;			//указатель на массив элементов
-   int* Pri;			//указатель на массив приоритетов элементов соответственно
-   int QueueLength;		//текущая длина очереди
- public:
-   QueuePriority();
-   ~QueuePriority();
-   void Add(int c,int p);	//добавление элемента "с" с приоритетом "p"
-   int Extract();			//извлечение элемента с наибольшим приоритетом
-   void Clear();			//очистка очереди, (QueueLength == 0)
-   bool IsEmpty() const;	//проверка на пустоту очереди. Используется в Extract(), ведь из пустой очереди мы не можем ничего извлечь.
-   int Getlength() const;	//возвращает длину очереди
-   friend std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP);	//перегрузка оператора "<<" для вывода на экран очереди с приоритетом
- };
+class QueuePriority
+{
+	private:
 
-#endif PRIORQUEUE_H
+	//pointer to array of elements
+	int* Wait;
+
+	//pointer to array of priority of elements
+	int* Pri;
+
+	//current length of the queue
+	int QueueLength;
+
+public:
+	QueuePriority();
+	~QueuePriority();
+
+	//add element "с" with priority "p"
+	void Add(int c, int p);
+
+	//extract the element with the highest priority
+	int Extract();
+
+	//clear the queue, (QueueLength == 0)
+	void Clear();
+
+	//check for empty queue. Used in Extract()
+	bool IsEmpty() const;
+
+	//return the length of the queue
+	int Getlength() const;
+
+	//overload operator "<<" to display the priority queue
+	friend 
+	std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP);
+ };
+#endif	//PriorQueue_H

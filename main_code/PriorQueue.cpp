@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "PriorQueue.h"
+#include <assert.h>
 
 QueuePriority::~QueuePriority()
 {
@@ -12,7 +13,9 @@ QueuePriority::QueuePriority()
 {
 	QueueLength = 0;
 	Wait = (int*)calloc(QueueLength, sizeof(int));
+	assert(Wait);
 	Pri = (int*)calloc(QueueLength, sizeof(int));
+	assert(Pri);
 }
 
 void QueuePriority::Clear()
@@ -21,7 +24,9 @@ void QueuePriority::Clear()
 	delete[]Pri;
 	QueueLength = 0;
 	Wait = (int*)calloc(QueueLength, sizeof(int));
+	assert(Wait);
 	Pri = (int*)calloc(QueueLength, sizeof(int));
+	assert(Pri);
 }
 
 bool QueuePriority::IsEmpty() const
@@ -37,7 +42,9 @@ int QueuePriority::Getlength() const
 void QueuePriority::Add(int c, int p)
 {
 	Wait = (int*)realloc(Wait, (QueueLength + 1) * sizeof(int));
+	assert(Wait);
 	Pri = (int*)realloc(Pri, (QueueLength + 1) * sizeof(int));
+	assert(Pri);
 	Wait[QueueLength] = c;
 	Pri[QueueLength] = p;
 	QueueLength++;
@@ -45,9 +52,11 @@ void QueuePriority::Add(int c, int p)
 
 int QueuePriority::Extract()
 {
-	if (!IsEmpty())								//если очередь пуста, то извлекать нечего, возвращаем -1
+	//if the queue is empty, there is nothing to extract, return -1
+	if (!IsEmpty())
 	{
-		int max_pri = Pri[0];					//предполагаем, что элемент с наиб. приоритетом первый
+		//suppose that the element with max priority is first
+		int max_pri = Pri[0];
 		int pos_max_pri = 0;
 		for (int i = 1; i < QueueLength; i++)
 		{
@@ -57,7 +66,8 @@ int QueuePriority::Extract()
 				pos_max_pri = i;
 			}
 		}
-		int ret_val = Wait[pos_max_pri];		//защищаем элемент с наиб. приоритетом от удаления при сдвиге очереди
+		//protect element with max priority from removal
+		int ret_val = Wait[pos_max_pri];
 		for (int i = pos_max_pri; i < QueueLength - 1; i++)
 		{
 			Wait[i] = Wait[i + 1];
@@ -66,15 +76,19 @@ int QueuePriority::Extract()
 		QueueLength--;
 		return ret_val;
 	}
-	else return -1;
+	else 
+	{
+		std::cout<<"Warning: you tried to get element from empty queue\n";
+	}
+	return 0;
 }
 
 std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP)
 {
-	cout_<<"  QueuePriority:\n";
+	cout_<<"|QueuePriority:\n";
 	for (int i = 0; i < QP.QueueLength; i++)
 	{
-		cout_<<"value = "<<QP.Wait[i]<<" priority = "<<QP.Pri[i]<<"\n";
+		cout_<<"|value = "<<QP.Wait[i]<<" priority = "<<QP.Pri[i]<<"\n";
 	}
 	cout_<<"\n";
 	return cout_;
