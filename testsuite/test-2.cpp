@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "iostream"
 #include "PriorQueue.h"
-#include <conio.h>
 
 int main()
 {
@@ -16,6 +15,5 @@ int main()
 	extr = QP.Extract();
 	std::cout<<QP;
 	printf("extract value = %d", extr);
-	_getch();
 	return (0);
 }
