@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "iostream"
 #include "PriorQueue.h"
-#include <conio.h>
 #define N 2999
 
 int main()
@@ -14,6 +13,5 @@ int main()
 	}
 	std::cout<<QP;
 	printf("extract value = %d", QP.Extract());
-	_getch();
 	return (0);
 }
