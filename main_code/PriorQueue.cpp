@@ -52,10 +52,10 @@ void QueuePriority::Add(int c, int p)
 
 int QueuePriority::Extract()
 {
-	//if the queue is empty, there is nothing to extract, return -1
+	// If the queue is empty, there is nothing to extract, return -1
 	if (!IsEmpty())
 	{
-		//suppose that the element with max priority is first
+		// Suppose that the element with max priority is first
 		int max_pri = Pri[0];
 		int pos_max_pri = 0;
 		for (int i = 1; i < QueueLength; i++)
@@ -66,7 +66,7 @@ int QueuePriority::Extract()
 				pos_max_pri = i;
 			}
 		}
-		//protect element with max priority from removal
+		// Protect element with max priority from removal
 		int ret_val = Wait[pos_max_pri];
 		for (int i = pos_max_pri; i < QueueLength - 1; i++)
 		{
