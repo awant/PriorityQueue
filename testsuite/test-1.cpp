@@ -1,13 +1,17 @@
-//check for correct extraction element
-#include <stdlib.h>
-#include "iostream"
+// check for correct extraction element
 #include "PriorQueue.h"
-#include <conio.h>
+#include "fstream"
+#include <iostream>
 
 int main()
 {
 	int extr = 0;
+	int ewmp = 10; // elem with max prior.
 	QueuePriority QP;
+	std::ofstream file;
+	file.open("log-file.txt", std::ios_base::app);
+	if (file == NULL)
+		return 0;
 	QP.Add(31, 1);
 	QP.Add(65, 2);
 	QP.Add(10, 11);
@@ -16,10 +20,18 @@ int main()
 	QP.Add(72, 6);
 	QP.Add(66, 7);
 	QP.Add(22, 8);
-	std::cout<<QP;
-	extr = QP.Extract();
-	std::cout<<QP;
-	printf("extract value = %d", extr);
-	_getch();
+	if (ewmp != QP.Extract())
+	{
+		std::cout<<"failed\n";
+		file << "test-1\n";
+		file << "	check for correct extraction element...failed\n";
+	}
+	else
+	{
+		std::cout<<"success\n";
+		file << "test-1\n";
+		file << "	check for correct extraction element...ok\n";
+	}
+	file.close();
 	return (0);
 }
