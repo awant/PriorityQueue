@@ -35,7 +35,7 @@ public:
 	int Getlength() const;
 
 	// Overload operator "<<" to display the priority queue
-	friend 
+	friend
 	std::ostream& operator << (std::ostream& cout_, const QueuePriority& QP);
  };
 #endif	// PriorQueue_H

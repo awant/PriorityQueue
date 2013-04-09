@@ -5,7 +5,6 @@
 
 int main()
 {
-	int extr = 0;
 	int ewmp = 10; // elem with max prior.
 	QueuePriority QP;
 	std::ofstream file;
