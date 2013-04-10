@@ -1,10 +1,10 @@
-#include <iostream>
 #ifndef PRIORQUEUE_H
 #define PRIORQUEUE_H
+#include <iostream>
 
 class QueuePriority
 {
-	private:
+private:
 
 	// Pointer to array of elements
 	int* Wait;
