@@ -1,6 +1,6 @@
-#include <iostream>
 #ifndef PRIORQUEUE_H
 #define PRIORQUEUE_H
+#include <iostream>
 
 class QueuePriority
 {
