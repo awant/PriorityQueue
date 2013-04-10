@@ -4,7 +4,7 @@
 
 class QueuePriority
 {
-	private:
+private:
 
 	// Pointer to array of elements
 	int* Wait;
