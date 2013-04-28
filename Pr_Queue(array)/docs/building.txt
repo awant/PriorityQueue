@@ -1,0 +1,7 @@
+compilation on linux:
+
+g++ -c PriorQueue.cpp
+g++ -c test-x.cpp
+g++ PriorQueue.o test-x.o -o prog
+
+//x - test number

@@ -1,0 +1,3 @@
+Wait;			// array of element
+Pri;			// array of priority element
+int QueueLength;	// size of the queue

@@ -1,0 +1,7 @@
+QueuePriority()		// create a class - priority queue
+~QueuePriority()	// delete class - priority queue
+int IsEmpty()    	// returns 1 if the queue is empty
+int Getlength()      	// returns the length of the queue
+int Extract()      	// returns the element with the highest priority
+void Add(int, int) 	// adding an item to the priority queue
+void Dump()		// print queue with priority
