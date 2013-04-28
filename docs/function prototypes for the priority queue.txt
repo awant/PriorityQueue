@@ -1,8 +1,0 @@
-QueuePriority(size)	//create a class - priority queue
-~QueuePriority()	//delete class - priority queue
-bool empty()    	//returns 1 if the queue is empty
-bool full()     	//returns 1 if the queue is fill
-int size()      	//returns the length of the queue
-int pop()       	//returns the element with the highest priority
-void push(elem, prior)  //adding an item to the priority queue
-void dump()		//print queue with priority
